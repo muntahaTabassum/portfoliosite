@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Muntaha Tabassum | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h2 class="logo">Portfolio</h2>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+      <h1>
+        Aspiring <br>
+        <span class="highlight">Developer</span> & <br>
+        Creative Thinker
+      </h1>
+      <p class="description">
+        Hi! I'm a passionate student exploring the world of technology and design.
+        I love building things that are both functional and beautiful.
+      </p>
+      <div class="buttons">
+        <button class="btn primary">VIEW MY WORK</button>
+        <button class="btn outline">CONTACT ME</button>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="circle">M</div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <p class="section-subtitle">WHAT I KNOW</p>
+    <h2>My Skills</h2>
+
+    <div class="skills">
+      <span v-for="skill in skills" :key="skill" class="skill">
+        {{ skill }}
+      </span>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <p class="section-subtitle">THINGS I’VE BUILT</p>
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+      <div class="project-card" v-for="project in projects" :key="project.title">
+        <div class="icon">📁</div>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about">
+    <div class="about-text">
+      <p class="section-subtitle">Who I am</p>
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm a passionate student exploring the world of technology and design.
+        I love building things that are both functional and beautiful.
+      </p>
+      <p>
+        I’m always looking to learn, grow, and collaborate on exciting projects.
+        Feel free to reach out!
+      </p>
+    </div>
+
+    <div class="about-card">
+      <div v-for="info in aboutInfo" :key="info.label" class="about-row">
+        <span>{{ info.label }}</span>
+        <strong>{{ info.value }}</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <h2>Contact Me</h2>
+    <p>Email: tabassum.muntaha23@gmail.com</p>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
